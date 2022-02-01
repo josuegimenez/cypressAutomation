@@ -23,5 +23,6 @@ it('My First Test Case', function(){
 cy.contains('Place').click()
 
 
+
 })
 })
