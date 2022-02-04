@@ -1,0 +1,102 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-03T21:43:30.060Z",
+    "end": "2022-02-03T21:43:39.942Z",
+    "duration": 9882,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b6010f59-279b-4245-8da5-4930b1b6b789",
+      "title": "",
+      "fullFile": "cypress/integration/Test6.js",
+      "file": "cypress/integration/Test6.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "090f8ccf-c905-4b66-92db-80aeb67e9fca",
+          "title": "My Sixth Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My First Test Case",
+              "fullTitle": "My Sixth Test Suite My First Test Case",
+              "timedOut": null,
+              "duration": 7987,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.get('#opentab').invoke('removeAttr', 'target').click();\ncy.url().should('include', \"rahulshettyacademy\");\ncy.go(\"back\");",
+              "err": {},
+              "uuid": "6ec15442-28d6-47ee-82a0-75fec5320fdb",
+              "parentUUID": "090f8ccf-c905-4b66-92db-80aeb67e9fca",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6ec15442-28d6-47ee-82a0-75fec5320fdb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7987,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "6.0.1"
+    }
+  }
+}

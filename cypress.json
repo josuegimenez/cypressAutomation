@@ -1,3 +1,15 @@
 {
-    "blockHosts": "www.googletagmanager.com"
+    "blockHosts": "www.googletagmanager.com",
+    "projectId": "dsfefk",
+     "reporter": "mochawesome",  "reporterOptions": {    "overwrite": false},
+    "defaultCommandTimeout":8000,
+    "env":
+    {
+        "url":"https://rahulshettyacademy.com"
+    },
+    "retries": {
+        "runMode": 2,
+        "openMode": 2
+      }
+
 }

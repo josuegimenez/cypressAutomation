@@ -1,0 +1,102 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-03T21:42:56.057Z",
+    "end": "2022-02-03T21:43:04.389Z",
+    "duration": 8332,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3d308757-ba6a-462f-b942-b37ca8a4ed67",
+      "title": "",
+      "fullFile": "cypress/integration/Test3.js",
+      "file": "cypress/integration/Test3.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1b40156a-ef89-40b3-9e50-4b2b124535aa",
+          "title": "My Third Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My First Test Case",
+              "fullTitle": "My Third Test Suite My First Test Case",
+              "timedOut": null,
+              "duration": 6218,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.get('#checkBoxOption1').check().should(\"be.checked\").and('have.value', 'option1');\ncy.get('#checkBoxOption1').uncheck().should(\"not.be.checked\");\ncy.get(\"[id*='checkBoxOption']\").check(); //te selecciona todo los checkboxes que contengan ese texto\ncy.get('select').select('Option2').should('have.value', 'option2');\ncy.get('#autocomplete').type('ind');\ncy.get(\"[class='ui-menu-item-wrapper']\").each(option => {\n  if (option.text() == \"India\") {\n    cy.wrap(option).click();\n  }\n});\ncy.get('#autocomplete').should('have.value', 'India');",
+              "err": {},
+              "uuid": "def8144e-bbb8-4d77-9198-4366f1113945",
+              "parentUUID": "1b40156a-ef89-40b3-9e50-4b2b124535aa",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "def8144e-bbb8-4d77-9198-4366f1113945"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6218,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "6.0.1"
+    }
+  }
+}

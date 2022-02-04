@@ -1,0 +1,102 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-03T21:42:29.262Z",
+    "end": "2022-02-03T21:42:40.683Z",
+    "duration": 11421,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "81c530ca-ef96-495a-bc6f-ea478e7610df",
+      "title": "",
+      "fullFile": "cypress/integration/Test11_FRAMEWORK.js",
+      "file": "cypress/integration/Test11_FRAMEWORK.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cad8f398-ec83-4c2e-884e-db20697b29a1",
+          "title": "Framework Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My First Test Case",
+              "fullTitle": "Framework Test Suite My First Test Case",
+              "timedOut": null,
+              "duration": 9703,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const homePage = new _HomePage.default();\nconst product = new _Products.default();\nconst checkout = new _Checkout.default();\ncy.visit(Cypress.env(\"url\") + \"/angularpractice/\");\nhomePage.getEditBox().type(testData.name); //pones el nombre (del fichero \"example.json\") en el form que apunta el selector\nhomePage.getGender().select(testData.gender); //poner el valor de gender del fichero example en el dropdown (select) del selector select1\nhomePage.getTwoWayDataByName().should('have.value', testData.name); //Assertion: compruebas que lo que pusimos arriba está en esta caja\n//cy.get(\"[name='name']:nth-child(1)\").should('have.value',testData.name) \n//Comprobamos que el mínimo número de carácteres sea 2\n//Opción 1\n/*cy.get(\"[name='name']:nth-child(2)\").then(e=>{\n    const minLength= e.prop('minLength')\n    expect(minLength).to.equal(2)\n})*/\n//Opción 2: alternativa a lo de arriba sería:\nhomePage.getEditBox().should('have.attr', 'minlength', '2'); //cy.get(\"[name='name']:nth-child(2)\").should('have.attr','minlength','2')\n//Assertion de que un radio button no está seleccionado\nhomePage.getEntrepeneur().should('be.disabled'); //Click en SHOP\nhomePage.getShopTab().click(); //selecciona el iphone, pero no entiendo muy bien por qué? --> el selectProduct es un custom method, lo creamos en support/commands.js\n//cómo se hace la conexión? creo que se añade de manera automática a la lista de métodos cuando se añade un método en commands-js\n//--Hemos sustituído este método por el de abajo, donde selecciona automáticamente todos los elementos que le metamos al array de product en example.json\n//--cy.selectProduct(\"iPhone\")\n//Tengo el array testData.product (que es un array) y por cada elemento lo recorro y le hago el selectProduct. No hay que preocuparse si no te acuerdas del foreach, todo se busca en google\ntestData.product.forEach(element => cy.selectProduct(element));\nproduct.getCheckoutTab().click();\nvar sum_price = 0;\ncy.get(\"td:nth-child(4) strong\").each(price => {\n  sum_price = sum_price + Number(price.text().split(\" \")[1]);\n}).then(function () {\n  console.log(sum_price);\n});\ncy.get(\"td:nth-child(5) strong\").then(function (el) {\n  let total = Number(el.text().split(\" \")[1]);\n  expect(total).to.equal(sum_price);\n});\ncheckout.getCheckoutButton().click();\ncy.get(\"#country\").type(\"India\");\ncy.get(\".suggestions ul li a\").click();\ncy.get(\"#checkbox2\").click({\n  force: true\n}); //ponemos el force:true porque si no da un error raro de que está cubierto por otro elemento. de esta manera obviamos el warning y clickamos de todas maneras\ncy.get(\"input[value='Purchase']\").click();\ncy.get(\".alert\").should(\"contains.text\", \"Success! Thank you! Your order will be delivered in next few weeks :-).\");",
+              "err": {},
+              "uuid": "085365c5-e230-48f2-8c24-ca13510a7e9b",
+              "parentUUID": "cad8f398-ec83-4c2e-884e-db20697b29a1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "085365c5-e230-48f2-8c24-ca13510a7e9b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9703,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "6.0.1"
+    }
+  }
+}

@@ -1,7 +1,10 @@
 /// <reference types="Cypress" />
 /// <reference types="cypress-iframe"/>
 import 'cypress-iframe'
+import { home } from 'ospath';
 import HomePage from './pageObjects/HomePage'
+import Products from './pageObjects/Products'
+import Checkout from './pageObjects/Checkout'
 // import { data } from 'cypress/types/jquery';
 
 describe('Framework Test Suite', function(){
@@ -17,8 +20,11 @@ describe('Framework Test Suite', function(){
           })
     
 it('My First Test Case', function(){
+
     const homePage=new HomePage()
-    cy.visit("https://rahulshettyacademy.com/angularpractice/")
+    const product=new Products()
+    const checkout=new Checkout()
+    cy.visit(Cypress.env("url")+"/angularpractice/")
 
     homePage.getEditBox().type(testData.name) //pones el nombre (del fichero "example.json") en el form que apunta el selector
     homePage.getGender().select(testData.gender) //poner el valor de gender del fichero example en el dropdown (select) del selector select1
@@ -50,7 +56,24 @@ homePage.getShopTab().click()
 
 //Tengo el array testData.product (que es un array) y por cada elemento lo recorro y le hago el selectProduct. No hay que preocuparse si no te acuerdas del foreach, todo se busca en google
 testData.product.forEach(element => cy.selectProduct(element))
+product.getCheckoutTab().click()
+var sum_price=0
+ cy.get("td:nth-child(4) strong").each((price)=>{sum_price=sum_price+Number(price.text().split(" ")[1])})
+ .then(function(){console.log(sum_price)})
 
+cy.get("td:nth-child(5) strong").then(function(el){
+    let total= Number(el.text().split(" ")[1])
+    expect(total).to.equal(sum_price)
+})
+    
 
+checkout.getCheckoutButton().click()
+
+cy.get("#country").type("India")
+cy.get(".suggestions ul li a").click()
+cy.get("#checkbox2").click({force:true}) //ponemos el force:true porque si no da un error raro de que está cubierto por otro elemento. de esta manera obviamos el warning y clickamos de todas maneras
+cy.get("input[value='Purchase']").click()
+
+cy.get(".alert").should("contains.text","Success! Thank you! Your order will be delivered in next few weeks :-).")
 })
 })

@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-02-04T13:49:17.163Z",
+    "end": "2022-02-04T13:49:19.389Z",
+    "duration": 2226,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ac39a9e9-fb97-4f04-ab52-2ff704e5ec50",
+      "title": "",
+      "fullFile": "cypress/integration/GreenKart/Test2.js",
+      "file": "cypress/integration/GreenKart/Test2.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "833c600d-33b9-4856-a5c2-272777296e0a",
+          "title": "My Second Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My First Test Case",
+              "fullTitle": "My Second Test Suite My First Test Case",
+              "timedOut": null,
+              "duration": 351,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://rahulshettyacademy.com/seleniumPKKKractise/#/\");\ncy.get('.search-keyword').type(\"ca\");\ncy.wait(2000);\ncy.get('.products').as('productosLocator');\ncy.get('@productosLocator').find('.product').each(product => {\n  const textVeg = product.find('h4.product-name').text();\n  if (textVeg.includes(\"Cash\")) {\n    cy.wrap(product).find('button').click();\n  }\n});\ncy.get('[alt=\"Cart\"]').click();\ncy.contains('CHECKOUT').click(); //------alternativa\n//    cy.get('button').each((button)=>{\n//        if(button.text().includes('CHECKOUT'))button.click()\n//    })//text().includes('PROCEED TO CHECKOUT').click();\ncy.contains('Place').click();",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://rahulshettyacademy.com/seleniumPKKKractise/\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://rahulshettyacademy.com/seleniumPKKKractise/\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n    at http://localhost:54052/__cypress/runner/cypress_runner.js:159291:84\n    at visitFailedByErr (http://localhost:54052/__cypress/runner/cypress_runner.js:158660:12)\n    at http://localhost:54052/__cypress/runner/cypress_runner.js:159271:13\n    at tryCatcher (http://localhost:54052/__cypress/runner/cypress_runner.js:13196:23)\n    at Promise._settlePromiseFromHandler (http://localhost:54052/__cypress/runner/cypress_runner.js:11131:31)\n    at Promise._settlePromise (http://localhost:54052/__cypress/runner/cypress_runner.js:11188:18)\n    at Promise._settlePromise0 (http://localhost:54052/__cypress/runner/cypress_runner.js:11233:10)\n    at Promise._settlePromises (http://localhost:54052/__cypress/runner/cypress_runner.js:11309:18)\n    at _drainQueueStep (http://localhost:54052/__cypress/runner/cypress_runner.js:7903:12)\n    at _drainQueue (http://localhost:54052/__cypress/runner/cypress_runner.js:7896:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:54052/__cypress/runner/cypress_runner.js:7912:5)\n    at Async.drainQueues (http://localhost:54052/__cypress/runner/cypress_runner.js:7782:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:54052/__cypress/tests?p=cypress/integration/GreenKart/Test2.js:101:8)",
+                "diff": null
+              },
+              "uuid": "9fd4bd78-ad20-46ba-b2c3-f1b48cb06f3d",
+              "parentUUID": "833c600d-33b9-4856-a5c2-272777296e0a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "9fd4bd78-ad20-46ba-b2c3-f1b48cb06f3d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 351,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "6.0.1"
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-03T21:42:01.066Z",
+    "end": "2022-02-03T21:42:07.872Z",
+    "duration": 6806,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "68ce6f43-c35f-430c-abe1-22165a2bfaac",
+      "title": "",
+      "fullFile": "cypress/integration/Test1.js",
+      "file": "cypress/integration/Test1.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "309ce360-c514-4615-9060-af4b10b1010a",
+          "title": "My First Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My First Test Case",
+              "fullTitle": "My First Test Suite My First Test Case",
+              "timedOut": null,
+              "duration": 4655,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://rahulshettyacademy.com/seleniumPractise/#/\");\ncy.get('.search-keyword').type(\"ca\");\ncy.wait(2000); // cy.get('.products').find('.product').should('have.length',4)\n// cy.get('.products').find('.product').contains(\"CART\").each().click()\ncy.get('.products').as('productosLocator');\ncy.get('@productosLocator').find('.product').each(product => {\n  const textVeg = product.find('h4.product-name').text();\n  if (textVeg.includes(\"Cauliflower\")) {\n    cy.wrap(product).find('button').click();\n  }\n}); // cy.get(\"[class*='brand']\").then(logo=>{cy.log(logo.text())})\ncy.get(\"[class*='brand']\").should('contains.text', 'GREEN');\ncy.log(\"hola Josu de cypress\").then(() => {\n  console.log(\"hola Josu!\");\n}); // cy.get('.products').find('.product').contains(\"Carrot\").parent().contains(\"CART\").click()",
+              "err": {},
+              "uuid": "426666ed-5792-4ca9-a205-d70d3e9a0529",
+              "parentUUID": "309ce360-c514-4615-9060-af4b10b1010a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "My Second Test Case",
+              "fullTitle": "My First Test Suite My Second Test Case",
+              "timedOut": null,
+              "duration": 15,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "9ef4d460-a3d0-4ed7-b892-8c84bb6943fb",
+              "parentUUID": "309ce360-c514-4615-9060-af4b10b1010a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "426666ed-5792-4ca9-a205-d70d3e9a0529",
+            "9ef4d460-a3d0-4ed7-b892-8c84bb6943fb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4670,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "6.0.1"
+    }
+  }
+}

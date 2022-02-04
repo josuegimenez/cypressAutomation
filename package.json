@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/cypress run",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "recordDashBoardTest": "npm run test -- --record --key aba75618-5471-49c4-a91f-fef8a1f7aee7 ",
+    "GreenKartTest":"npm run test -- --spec 'cypress/integration/GreenKart/*'"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^9.4.1",
-    "cypress-iframe": "^1.0.1"
+    "cypress-iframe": "^1.0.1",
+    "mocha": "^9.2.0",
+    "mochawesome": "^7.0.1"
   },
   "dependencies": {
     "aggregate-error": "^3.1.0",

@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-02-04T13:02:46.087Z",
+    "end": "2022-02-04T13:03:01.283Z",
+    "duration": 15196,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ece4ce7d-48d9-48fa-af30-d0b101d11fbd",
+      "title": "",
+      "fullFile": "cypress/integration/AmazonNotion.js",
+      "file": "cypress/integration/AmazonNotion.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "60b56c12-b8ac-4d07-8ff0-60e90c217006",
+          "title": "My Third Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My First Test Case",
+              "fullTitle": "My Third Test Suite My First Test Case",
+              "timedOut": null,
+              "duration": 13233,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// failOnStatusCode: false\n// cy.visit(failOnStatusCode: false,\n//     )\n// cy.visit('www.amazon.es')\n// cy.get('#a-autoid-0').click()\n// cy.get('.nav-search-field').type('The Happiness Hypothesis')\n// cy.get(\"#nav-search-submit-button\").click()\n// cy.wait(2000)\n// cy.get('[data-index=\"6\"]').click()\n// // cy.get(\"[data-cel-widget='search_result_0']\").click()\n// cy.log(\"link de la portada:\" )\n// const autor=cy.get('.author > span.a-declarative > .a-link-normal').then(texto=>{texto.text()})\n// cy.log(\"Autor: \" +autor)\n//NOTION\ncy.visit(\"https://www.notion.so/7dbf95702a004dd5b0db3b3f80b67669?v=b24649d5ae684ef78c1cadfabeeedbca\", {\n  failOnStatusCode: false\n});\ncy.get('#notion-email-input-1').type(\"bonsaide8pisos@gmail.com\");\ncy.get('div[role=\"button\"]').contains('email').click();\ncy.get('#notion-password-input-2').type(\"70veces7\");\ncy.get('[style=\"user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; border-radius: 3px; height: 32px; padding: 0px 12px; font-size: 14px; line-height: 1.2; border: 1px solid rgba(55, 53, 47, 0.16); margin-top: 6px; margin-bottom: 12px; width: 100%;\"]').click;\ncy.get('div[role=\"button\"]').contains('password').click();\ncy.get('[style=\"user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: rgb(46, 170, 220); align-self: stretch; box-shadow: rgba(55, 53, 47, 0.16) 1px 0px 0px inset; border-top-right-radius: 3px; border-bottom-right-radius: 3px;\"]').click();\ncy.get(':nth-child(2) > [style=\"user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; width: 100%;\"] > [style=\"display: flex; align-items: center; line-height: 120%; width: 100%; user-select: none; min-height: 28px; font-size: 14px;\"] > [style=\"margin-left: 8px; margin-right: 14px; min-width: 0px; flex: 1 1 auto;\"] > :nth-child(1) > .notranslate').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 8000ms: Expected to find element: `[style=\"user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: rgb(46, 170, 220); align-self: stretch; box-shadow: rgba(55, 53, 47, 0.16) 1px 0px 0px inset; border-top-right-radius: 3px; border-bottom-right-radius: 3px;\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 8000ms: Expected to find element: `[style=\"user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: rgb(46, 170, 220); align-self: stretch; box-shadow: rgba(55, 53, 47, 0.16) 1px 0px 0px inset; border-top-right-radius: 3px; border-bottom-right-radius: 3px;\"]`, but never found it.\n    at Context.eval (https://www.notion.so/__cypress/tests?p=cypress/integration/AmazonNotion.js:124:8)",
+                "diff": null
+              },
+              "uuid": "0ef90b30-c3c9-4f6e-a440-ba22e74a6c6f",
+              "parentUUID": "60b56c12-b8ac-4d07-8ff0-60e90c217006",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "0ef90b30-c3c9-4f6e-a440-ba22e74a6c6f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 13233,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "6.0.1"
+    }
+  }
+}

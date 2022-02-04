@@ -1,0 +1,102 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-03T21:42:12.277Z",
+    "end": "2022-02-03T21:42:24.344Z",
+    "duration": 12067,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6aa8c5c2-62f8-4dc6-b9e6-348725f0035c",
+      "title": "",
+      "fullFile": "cypress/integration/Test10_Iframes.js",
+      "file": "cypress/integration/Test10_Iframes.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ad777883-0fd7-430d-8e1c-14f1ec447a33",
+          "title": "Iframes Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My First Test Case",
+              "fullTitle": "Iframes Test Suite My First Test Case",
+              "timedOut": null,
+              "duration": 10201,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.frameLoaded(\"#courses-iframe\");\ncy.iframe().find(\"[href*='mentor']\").eq(0).click();",
+              "err": {},
+              "uuid": "7d0be536-df5d-4193-ba7e-5f43737411b0",
+              "parentUUID": "ad777883-0fd7-430d-8e1c-14f1ec447a33",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7d0be536-df5d-4193-ba7e-5f43737411b0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10201,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "6.0.1"
+    }
+  }
+}
